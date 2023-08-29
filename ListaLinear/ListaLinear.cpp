@@ -116,6 +116,9 @@ void inserirElemento()
 	}
 	else {
 		cout << "Lista cheia";
+		
+
+			
 	}
 
 }
@@ -123,8 +126,32 @@ void inserirElemento()
 void excluirElemento()
 {
 
+	int excluir;
 
+	cout << "Digite o elemento para excluir: ";
+	cin >> excluir;
+
+	int num = posicaoElemento(excluir);
+
+	if (num != -1) {
+		for (int n = num; n < nElementos - 1; n++) {
+			lista[n] = lista[n + 1];
+		}
+		nElementos = nElementos - 1;
+		cout << "Numero excluido" << endl;
+	}
+	else {
+		cout << "O numero nao existe " << endl;
+	}
 }
+
+
+
+
+	
+
+
+
 
 void buscarElemento()
 {
@@ -152,3 +179,4 @@ int posicaoElemento(int busca)
 	}
 	return posicao;
 }
+
